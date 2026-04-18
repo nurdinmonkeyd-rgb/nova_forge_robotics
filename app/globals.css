@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark Space Theme Colors */
+  --background: #030014; /* Deep Space Black */
+  --foreground: #e2e8f0; /* Stardust Gray */
+  
+  /* Card Component Colors (Shadcn-compatible) */
+  --card: rgba(17, 17, 25, 0.4); /* Translucent obsidian for glassmorphism */
+  --card-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #94a3b8;
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #c084fc; /* Neon Purple */
+  --primary-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  /* Spotlight Animation */
+  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  
+  --keyframes-spotlight: {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  };
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
